@@ -1,0 +1,201 @@
+<html class="">
+    <!--STATUS OK-->
+    
+    <head>		
+        <meta name="referrer" content="always">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+		<title>Nju-Nova-Search</title>
+	    <link rel="stylesheet" href="css/wap.css" media="screen" type="text/css" />
+		
+		<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function($){//splicing the string of keyword
+
+			$('#index-form').submit(function(e){
+				$.ajax({
+					url:'./plus.php',
+					dataType:"json",
+					type:'POST',
+					cache:false,
+					data:'keyword='+$('#index-kw').val()+'&type=phone',
+					success: function(data) {
+						if (data.s=='ok') {
+						
+						}
+					}
+				});
+			});
+		});
+		</script>
+
+    </head>
+    
+    <body style="zoom: 1;">
+      
+        <div id="page">
+            <div id="index-card">
+                <div id="header">
+                    <div id="userinfo-wrap">
+                        <a id="userinfo" href="#">
+                            NJU
+                        </a>
+                    </div>
+                    <div id="logo" class="homelogo png">
+                        <img src="./css/homelogo.png" width="175" height="55"
+                        alt="">
+                    </div>
+                    <form name="form" class="se-form" id="index-form" action="./wapshow.php"
+                    method="get" autocomplete="off">
+                        <div class="con-wrap">
+							<textarea maxlength="64" id="index-kw" name="key" class="se-input" style="height: 42px;" onkeydown='checkEnter(event)' ></textarea>	
+                            <div class="se-inner">
+                                <div id="index-cross" class="cross">
+                                </div>
+                                <div class="callicon-wrap">
+                                    <div class="baiduapp-icon">
+                                    </div>
+                                    <div class="baiduappcall-wrap">
+                                        <div class="qrcode call" data-ac="active">
+                                        </div>
+                                        <input id="ts-image-uploader" type="file" data-role="uploader" accept="image/*"
+                                        style="display:none;">
+                                        <div class="voice call" data-ac="active">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button id="index-bn" class="se-bn" type="submit">
+                                    点击搜索
+                                </button>
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="i" value="0">
+                    </form>
+					<script>
+						function checkEnter(e)
+						{
+						var et=e||window.event;
+						var keycode=et.charCode||et.keyCode;
+						if(keycode==13)
+						{
+							if(window.event)
+								window.event.returnValue = false;
+							else
+								e.preventDefault();//for firefox
+							}
+						}		
+					</script>
+                </div>
+                <div id="plus-card" style="display: block;" data-init="1">
+                    <div data-md5="5418d4b2" id="nav" class="plus">
+                        <style>
+      
+                        </style>
+                        <div class="plus-title">
+                            <div class="normal-title">
+                                <i class="icon-nav">
+                                </i>
+                                <h2>
+                                    常用网址
+                                </h2>
+                                <a class="plus-edit" href="javascript:;">
+                                    <i class="icon-edit">
+                                    </i>
+
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="plus-content " id="nav-list" href="javascript:;" style="display: block">
+
+                            <a href="#">
+                                <span>
+                                    12级搜索
+                                </span>
+                            </a>
+                            <a href="#">
+                                <span>
+                                    13级搜索
+                                </span>
+                            </a>							
+                            <a href="#">
+                                <span>
+                                   14级搜索
+                                </span>
+                            </a>
+                            <a href="#">
+                                <span>
+                                    15级搜索
+                                </span>
+                            </a>
+                           
+                         
+
+
+                        </div>
+
+
+                    </div>
+                    <div data-md5="f8b712f3" id="hotword" class="plus android">
+                        <style>
+        
+                        </style>
+                        <div class="plus-title">
+                            <div class="normal-title">
+                                <i class="icon-news">
+                                </i>
+                                <h2>
+                                    新闻热点
+                                </h2>
+                                <a class="plus-edit" href="javascript:;">
+                                    <i class="icon-edit">
+                                    </i>
+
+                                </a>
+                            </div>
+
+                        </div>
+                <ul class="plus-content"id="hotword-list">
+				<li><a href="#">百合十大</a></li><li><a href="#">百合十大</a></li>
+                <li><a href="#">百合十大</a></li><li><a href="#">百合十大</a></li>
+				<li><a href="#">百合十大</a></li><li><a href="#">百合十大</a></li>
+				<li><a href="#">百合十大</a></li><li><a href="#">百合十大</a></li>
+                <li><a href="#">百合十大</a></li><li><a href="#">百合十大</a></li></ul>
+				  
+                     
+                    </div>
+                </div>
+            
+
+                <div id="bottom">
+                    <style>
+                 
+                    </style>
+           
+                    <div id="foot">
+                        <div>
+                            <a id="switch-to-utouch" href="#"
+                            data-stats="10|2|foot|a1_b1">
+                                添加功能
+                            </a>
+                            <a href="#"
+                            data-stats="10|2|foot|a1_b2">
+                                添加功能
+                            </a>
+                        </div>
+                        <a id="index-copyright" href="#"
+                        data-stats="10|2|foot|a2_l1">
+                            使用前必读NJU-SEARCH使用手册
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+    
+        </div>
+    </body>
+
+</html>
